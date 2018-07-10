@@ -1,4 +1,5 @@
 import React from 'react';
+import GameCard from '../components/GameCard';
 import _ from 'lodash';
 
 
@@ -7,7 +8,9 @@ class Main extends React.Component {
     super(props);
     this.state = {
       games: [],
-      currentGame: null
+      currentGame: null,
+      round: 1,
+      score: 0
     }
     this.setCurrentGame = this.setCurrentGame.bind(this)
   }
@@ -26,7 +29,11 @@ class Main extends React.Component {
 
   render(){
     return(
-      <h1>Main</h1>
+      <React.Fragment>
+        <p className="question">Score: {this.state.score}</p>
+        <p className="round">Round: {this.state.round}</p>
+        <GameCard game={this.state.currentGame}/>
+      </React.Fragment>
     )
   }
 }
