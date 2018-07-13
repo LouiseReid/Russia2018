@@ -23,7 +23,7 @@ db.games.insertMany([
     away_fouls: 8,
     extra_time: false,
     penalties: false,
-    hints: ['Penalty conceded by an ex Sheffield Utd player', 'Home team governing body CAF', 'Away team governing body UEFA', 'Extra time goal', 'Home team goal scorer plays his club football in Saudi Arabia']
+    hints: ['Home team goal scorer plays his club football in Saudi Arabia', 'Penalty conceded by an ex Sheffield Utd player', 'Extra time goal', 'Home team governing body CAF', 'Away team governing body UEFA']
   },
   {
     round: 'Group Stages',
@@ -46,6 +46,6 @@ db.games.insertMany([
     away_fouls: 10,
     extra_time: false,
     penalties: false,
-    hints: ['There was a hat-trick in the match', 'A player born in Lagarto, Brazil scored twice', 'An ex Manchester United player was given MOTM', 'Both teams qualified from the group', 'A defender scored with a volley']
+    hints: ['There was a hat-trick in the match', 'A player born in Lagarto, Brazil scored twice', 'A defender scored with a volley', 'An ex Manchester United player was given MOTM', 'Both teams qualified from the group']
   }
 ])
