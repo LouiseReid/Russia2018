@@ -13,7 +13,6 @@ class Main extends React.Component {
       score: 0
     }
     this.setCurrentGame = this.setCurrentGame.bind(this)
-    // this.calculateScore = this.calculateScore.bind(this)
   }
 
   componentDidMount(){
@@ -29,7 +28,8 @@ class Main extends React.Component {
   }
 
   calculateScore(data){
-    this.setState({score: this.state.score + data})
+    this.setState({score: this.state.score + data, round: this.state.round + 1})
+    this.setCurrentGame()
   }
 
   render(){

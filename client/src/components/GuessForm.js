@@ -12,6 +12,7 @@ class GuessForm extends React.Component {
   handleGuess(){
     if(this.props.home === this.state.home && this.props.away === this.state.away){
       this.props.correctGuess()
+      this.setState({home: '', away: ''})
     }
   }
 
