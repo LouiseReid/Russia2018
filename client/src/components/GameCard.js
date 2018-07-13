@@ -19,7 +19,6 @@ class GameCard extends React.Component {
 
   correctGuess(){
     let roundScore = this.state.roundScore
-    console.log(roundScore);
     this.props.addToScore(roundScore)
   }
 

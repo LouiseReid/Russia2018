@@ -13,7 +13,7 @@ class Main extends React.Component {
       score: 0
     }
     this.setCurrentGame = this.setCurrentGame.bind(this)
-    this.calculateScore = this.calculateScore.bind(this)
+    // this.calculateScore = this.calculateScore.bind(this)
   }
 
   componentDidMount(){
@@ -37,7 +37,7 @@ class Main extends React.Component {
       <React.Fragment>
         <p className="question">Score: {this.state.score}</p>
         <p className="round">Round: {this.state.round}</p>
-        <GameCard game={this.state.currentGame} addToScore={this.calculateScore}/>
+        <GameCard game={this.state.currentGame} addToScore={(data) => this.calculateScore(data)}/>
       </React.Fragment>
     )
   }
