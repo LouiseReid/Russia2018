@@ -10,9 +10,9 @@ class GuessForm extends React.Component {
   }
 
   handleGuess(){
-    console.log('this', this);
-    if(this.props.home === this.state.home && this.props.away === this.state.away)
-    console.log('correct');
+    if(this.props.home === this.state.home && this.props.away === this.state.away){
+      this.props.correctGuess()
+    }
   }
 
   render(){

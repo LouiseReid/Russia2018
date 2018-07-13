@@ -17,6 +17,12 @@ class GameCard extends React.Component {
     }
   }
 
+  correctGuess(){
+    let roundScore = this.state.roundScore
+    console.log(roundScore);
+    this.props.addToScore(roundScore)
+  }
+
 
   render(){
     if(!this.props.game) return null;
@@ -71,6 +77,7 @@ class GameCard extends React.Component {
           <GuessForm
             home={home_team}
             away={away_team}
+            correctGuess={() => this.correctGuess()}
           />
         </div>
 
