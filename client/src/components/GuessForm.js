@@ -22,6 +22,11 @@ class GuessForm extends React.Component {
     }
   }
 
+  giveUp(){
+    this.setState({home: this.props.home, away: this.props.away})
+    this.props.giveUp()
+  }
+
   render(){
 
     return(
@@ -43,6 +48,12 @@ class GuessForm extends React.Component {
           onClick={() => this.handleGuess()}
           >
           Guess
+        </button>
+        <button
+          className="btn btn-giveUp"
+          onClick={() => this.giveUp()}
+          >
+          Give Up
         </button>
       </div>
     )

@@ -33,13 +33,13 @@ class Main extends React.Component {
   }
 
   render(){
-    return(
-      <React.Fragment>
-        <p className="question">Score: {this.state.score}</p>
-        <p className="round">Round: {this.state.round}</p>
-        <GameCard game={this.state.currentGame} addToScore={(data) => this.calculateScore(data)}/>
-      </React.Fragment>
-    )
+      return(
+        <React.Fragment>
+          <p className="question">Score: {this.state.score}</p>
+          <p className="round">Round: {this.state.round}</p>
+          <GameCard game={this.state.currentGame} addToScore={(data) => this.calculateScore(data)}/>
+        </React.Fragment>
+      )
   }
 }
 
