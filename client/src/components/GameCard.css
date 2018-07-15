@@ -1,0 +1,32 @@
+.game-container {
+  display: flex;
+}
+
+.game-card-header {
+  text-align: center;
+}
+
+.game-info {
+  margin-top: 10vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/images/pitch.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.game-interaction {
+  margin-top: 10vh;
+}
+
+.game-extras {
+  text-align: center;
+}

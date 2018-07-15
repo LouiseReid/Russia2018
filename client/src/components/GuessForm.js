@@ -92,7 +92,6 @@ class GuessForm extends React.Component {
         onAfterOpen={() => this.afterOpenModal}
         onRequestClose={() => this.closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
         >
         <div className="modal-content">
           <button onClick={() => this.closeModal()}>x</button>

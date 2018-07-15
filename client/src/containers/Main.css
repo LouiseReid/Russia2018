@@ -1,0 +1,16 @@
+html {
+  /* background-color: lightgrey; */
+  /* background-image: url('/images/flags.png'); */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.main-container {
+  display: flex;
+
+}
+
+.round-info {
+  background-color: white;
+  height: 10vh;
+}
