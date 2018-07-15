@@ -23,8 +23,8 @@ class GuessForm extends React.Component {
   }
 
   giveUp(){
-    this.setState({home: this.props.home, away: this.props.away})
     this.props.giveUp()
+    this.setState({home: '', away: ''})
   }
 
   render(){

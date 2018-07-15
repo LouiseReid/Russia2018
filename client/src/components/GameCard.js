@@ -22,16 +22,14 @@ class GameCard extends React.Component {
       let roundScore = this.state.roundScore
       this.props.addToScore(roundScore)
       const initialState = {
-        roundScore: 6,
+        roundScore: 10,
         hintsShown: []
       }
       this.setState(initialState)
     }
 
     giveUp(){
-      this.setState({roundScore: 0})
-      let roundScore = this.state.roundScore
-      this.props.addToScore(roundScore)
+      this.setState({roundScore: 0}, () => this.correctGuess())
     }
 
     render(){

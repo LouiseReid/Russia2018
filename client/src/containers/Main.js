@@ -1,5 +1,6 @@
 import React from 'react';
 import GameCard from '../components/GameCard';
+import GameEnd from '../components/GameEnd';
 import _ from 'lodash';
 
 
@@ -33,6 +34,13 @@ class Main extends React.Component {
   }
 
   render(){
+    if(this.state.currentGame === undefined){
+      return (
+        <div>
+          <GameEnd finalScore={this.state.score}/>
+        </div>
+      );
+    } else {
       return(
         <React.Fragment>
           <p className="question">Score: {this.state.score}</p>
@@ -40,6 +48,7 @@ class Main extends React.Component {
           <GameCard game={this.state.currentGame} addToScore={(data) => this.calculateScore(data)}/>
         </React.Fragment>
       )
+    }
   }
 }
 
