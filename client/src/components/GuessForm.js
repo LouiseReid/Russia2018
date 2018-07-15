@@ -5,26 +5,28 @@ class GuessForm extends React.Component {
     super(props);
     this.state = {
       home: '',
-      away:''
-    }
+      away:''    }
   }
 
   handleGuess(){
     if(this.props.home === this.state.home && this.props.away === this.state.away){
       this.props.correctGuess()
-      this.setState({home: '', away: ''})
+      this.setState({home: '', away: '', incorrectGuessCount: 0})
     } else if (this.props.home === this.state.home && this.props.away !== this.state.away){
-      this.setState({away: ''})
+      this.setState({away: '', incorrectGuessCount: this.state.incorrectGuessCount + 1})
+      this.props.handleGuess()
     } else if (this.props.home !== this.state.home && this.props.away === this.state.away) {
-      this.setState({home: ''})
+      this.setState({home: '', incorrectGuessCount: this.state.incorrectGuessCount + 1})
+      this.props.handleGuess()
     } else {
-      this.setState({home: '', away: ''})
+      this.setState({home: '', away: '', incorrectGuessCount: this.state.incorrectGuessCount + 1})
+      this.props.handleGuess()
     }
   }
 
   giveUp(){
     this.props.giveUp()
-    this.setState({home: '', away: ''})
+    this.setState({home: '', away: '', incorrectGuessCount: 0})
   }
 
   render(){
