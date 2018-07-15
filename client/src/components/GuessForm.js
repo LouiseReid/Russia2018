@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import './GuessForm.css';
 
 Modal.setAppElement('#root')
 
@@ -9,6 +10,8 @@ class GuessForm extends React.Component {
     this.state = {
       home: '',
       away: '',
+      homeGuess: 'incorrect',
+      awayGuess: 'incorrect',
       modalIsOpen: false
     }
   }
@@ -20,12 +23,14 @@ class GuessForm extends React.Component {
     } else if (this.props.home === this.state.home && this.props.away !== this.state.away) {
       this.setState({
         away: '',
+        homeGuess: 'correct',
         incorrectGuessCount: this.state.incorrectGuessCount + 1
       })
       this.props.handleGuess()
     } else if (this.props.home !== this.state.home && this.props.away === this.state.away) {
       this.setState({
         home: '',
+        awayGuess: 'correct',
         incorrectGuessCount: this.state.incorrectGuessCount + 1
       })
       this.props.handleGuess()
@@ -63,12 +68,14 @@ class GuessForm extends React.Component {
       <React.Fragment>
         <div className="guess-inputs">
         <input
+          className={this.state.homeGuess}
           type="text"
           placeholder="home team"
           value={this.state.home}
           onChange={event => this.setState({home: event.target.value})}
         />
         <input
+          className={this.state.awayGuess}
           type="text"
           placeholder="away team"
           value={this.state.away}

@@ -45,8 +45,8 @@ class Main extends React.Component {
       return(
         <div className="main-container">
           <div className="round-info">
+            <p className="round">Round: {this.state.round}/10</p>
             <p className="question">Score: {this.state.score}</p>
-            <p className="round">Round: {this.state.round}</p>
           </div>
           <GameCard game={this.state.currentGame} addToScore={(data) => this.calculateScore(data)}/>
         </div>

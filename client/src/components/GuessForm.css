@@ -1,0 +1,19 @@
+.guess-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.guess-inputs input {
+  width: 50%;
+  height: 30px;
+  margin: 10px
+}
+
+.guess-inputs .btn {
+  width: 50%;
+  height: 30px;
+  margin: 10px
+}
+
+.correct {
+}

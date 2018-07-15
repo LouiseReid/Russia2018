@@ -1,16 +1,18 @@
 html {
-  /* background-color: lightgrey; */
-  /* background-image: url('/images/flags.png'); */
+  background-color: lightgrey;
+  background-image: url('/images/flags.png');
   background-repeat: no-repeat;
   background-position: center;
+  height: 100%
 }
 
 .main-container {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
 
 }
 
 .round-info {
-  background-color: white;
   height: 10vh;
 }

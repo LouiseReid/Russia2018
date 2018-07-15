@@ -1,5 +1,7 @@
 .game-container {
   display: flex;
+  justify-content: space-around;
+  margin: 10px;
 }
 
 .game-card-header {
@@ -7,14 +9,18 @@
 }
 
 .game-info {
-  margin-top: 10vh;
-  width: 40vw;
+  width: 45vw;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   background-image: url('/images/pitch.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
+  font-size: 19px;
+  font-weight:600;
+  text-shadow: 2px 3px 1px #000;
+  box-shadow: 0 0 15px 5px lightgrey inset;
 }
 
 .game-stats {
@@ -23,10 +29,25 @@
   text-align: center;
 }
 
-.game-interaction {
-  margin-top: 10vh;
-}
-
 .game-extras {
   text-align: center;
+  align-self: center;
+}
+
+.game-interaction {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 70vh;
+  width: 45vw;
+  padding: 0 5px 0;
+  font-size: 18px;
+}
+
+.game-hints {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 50%;
+  font-weight: bold;
+}
+
+li {
+  margin: 10px;
 }

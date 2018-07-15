@@ -58,7 +58,7 @@ class GameCard extends React.Component {
             </header>
             <div className="game-stats">
               <div className="home-stats">
-                <h5>Home Team</h5>
+                <p>Home Team</p>
                 <p>{home_goals}</p>
                 <p>Attempts: {home_attempts}</p>
                 <p>Possession: {home_possession}</p>
@@ -67,8 +67,12 @@ class GameCard extends React.Component {
                 <p>Red cards: {home_red}</p>
                 <p>Tactics: {home_tactics}</p>
               </div>
+              <div className="game-extras">
+                <p>Extra Time: {extra_time ? extra_time : 'false'}</p>
+                <p>Penalties: {penalties ? penalties : 'false'}</p>
+              </div>
               <div className="away-stats">
-                <h5>Away Team</h5>
+                <p>Away Team</p>
                 <p>{away_goals}</p>
                 <p>Attempts: {away_attempts}</p>
                 <p>Possession: {away_possession}</p>
@@ -78,16 +82,12 @@ class GameCard extends React.Component {
                 <p>Tactics: {away_tactics}</p>
               </div>
             </div>
-            <div className="game-extras">
-              <p>Extra Time: {extra_time ? extra_time : 'false'}</p>
-              <p>Penalties: {penalties ? penalties : 'false'}</p>
-            </div>
           </div>
           <div className="game-interaction">
             <p>Round Score: {this.state.roundScore}</p>
             <div className="game-hints">
-              <p>hints: {renderedHints}</p>
               <button onClick={() => this.renderHint()}>Show Hint</button>
+              <p>hints: {renderedHints}</p>
             </div>
             <GuessForm
               home={home_team}
