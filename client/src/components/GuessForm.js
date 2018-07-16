@@ -1,8 +1,6 @@
 import React from 'react';
-import Modal from 'react-modal';
 import './GuessForm.css';
 
-Modal.setAppElement('#root')
 
 class GuessForm extends React.Component {
   constructor(props) {
@@ -11,8 +9,7 @@ class GuessForm extends React.Component {
       home: '',
       away: '',
       homeGuess: 'incorrect',
-      awayGuess: 'incorrect',
-      modalIsOpen: false
+      awayGuess: 'incorrect'
     }
   }
 
@@ -45,21 +42,8 @@ class GuessForm extends React.Component {
   }
 
   giveUp() {
-    this.openModal()
-    this.props.giveUp()
-    this.setState({home: '', away: '', incorrectGuessCount: 0})
-  }
-
-  openModal() {
-    this.setState({modalIsOpen: true})
-  }
-
-  afterOpenModal() {
-    this.subtitle.style.color = '#f00';
-  }
-
-  closeModal() {
-    this.setState({modalIsOpen: false});
+    this.props.giveUp(this.props.home, this.props.away)
+    this.setState({home: '', away: ''})
   }
 
   render() {
@@ -67,58 +51,36 @@ class GuessForm extends React.Component {
     return (
       <React.Fragment>
         <div className="guess-inputs">
-        <input
-          className={this.state.homeGuess}
-          type="text"
-          placeholder="home team"
-          value={this.state.home}
-          onChange={event => this.setState({home: event.target.value})}
-        />
-        <input
-          className={this.state.awayGuess}
-          type="text"
-          placeholder="away team"
-          value={this.state.away}
-          onChange={event => this.setState({away: event.target.value})}
-        />
-        <button
-          className="btn btn-guess"
-          onClick={() => this.handleGuess()}
-          >
-          Guess
-        </button>
-        <button
-          className="btn btn-giveUp"
-          onClick={() => this.giveUp()}
-          >
-          Give Up
-        </button>
-      </div>
-      <Modal
-        isOpen={this.state.modalIsOpen}
-        onAfterOpen={() => this.afterOpenModal}
-        onRequestClose={() => this.closeModal}
-        style={customStyles}
-        >
-        <div className="modal-content">
-          <button onClick={() => this.closeModal()}>x</button>
-          <p>Correct Game: {this.props.home} vs {this.props.away} </p>
-        </div>
-      </Modal>
-      </React.Fragment>
-    )
-  }
-}
+          <input
+            className={this.state.homeGuess}
+            type="text"
+            placeholder="home team"
+            value={this.state.home}
+            onChange={event => this.setState({home: event.target.value})}
+          />
+          <input
+            className={this.state.awayGuess}
+            type="text"
+            placeholder="away team"
+            value={this.state.away}
+            onChange={event => this.setState({away: event.target.value})}
+          />
+          <button
+            className="btn btn-guess"
+            onClick={() => this.handleGuess()}
+            >
+              Guess
+            </button>
+            <button
+              className="btn btn-giveUp"
+              onClick={() => this.giveUp()}
+              >
+                Give Up
+              </button>
+            </div>
+          </React.Fragment>
+        )
+      }
+    }
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
-  }
-};
-
-export default GuessForm
+    export default GuessForm

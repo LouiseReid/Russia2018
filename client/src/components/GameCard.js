@@ -29,7 +29,8 @@ class GameCard extends React.Component {
     this.setState(initialState)
   }
 
-  giveUp(){
+  giveUp(g1, g2){
+    this.props.showAnswer(g1, g2)
     this.setState({roundScore: 0}, () => this.correctGuess())
   }
 
@@ -93,7 +94,7 @@ class GameCard extends React.Component {
               home={home_team}
               away={away_team}
               correctGuess={() => this.correctGuess()}
-              giveUp={() => this.giveUp()}
+              giveUp={(g1, g2) => this.giveUp(g1, g2)}
               handleGuess={() => this.handleGuess()}
             />
           </div>
