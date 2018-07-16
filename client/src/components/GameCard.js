@@ -2,13 +2,13 @@ import React from 'react';
 import GuessForm from './GuessForm.js';
 import './GameCard.css';
 
-
 class GameCard extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       roundScore: 10,
-      hintsShown: []
+      hintsShown: [],
+      modalIsOpen: false
     };
   }
 
@@ -20,6 +20,7 @@ class GameCard extends React.Component {
   }
 
   correctGuess(){
+    this.setState({modalIsOpen: true})
     let roundScore = this.state.roundScore
     this.props.addToScore(roundScore)
     const initialState = {
@@ -36,6 +37,18 @@ class GameCard extends React.Component {
 
   handleGuess(){
     this.setState({roundScore: this.state.roundScore - 1})
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true})
+  }
+
+  afterOpenModal() {
+    this.subtitle.style.color = '#f00';
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false, modalHome: null, modalAway: null});
   }
 
   render(){
@@ -87,7 +100,7 @@ class GameCard extends React.Component {
           <div className="game-interaction">
             <p className="round-score">Round Score: {this.state.roundScore}</p>
             <div className="game-hints">
-              <button onClick={() => this.renderHint()}>Show Hint</button>
+              <button className="btn btn-hint" onClick={() => this.renderHint()}>Show Hint</button>
               <p className="hint-label">Hints: </p>
               <div className="rendered-hints">
                 {renderedHints}
@@ -106,5 +119,6 @@ class GameCard extends React.Component {
     )
   }
 }
+
 
 export default GameCard;

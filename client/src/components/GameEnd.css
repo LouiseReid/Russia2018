@@ -1,0 +1,10 @@
+.final-result {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  height: 15vh;
+  width: 10vw;
+  background-color: #ffe34ff0;
+  border: 3px solid floralwhite;
+  border-radius: 10px;
+}

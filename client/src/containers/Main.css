@@ -15,7 +15,7 @@ html {
 
 .round-info {
   height: 8vh;
-  width: 12vw;
+  width: 10vw;
   background-color: #ffe34ff0;
   border: 3px solid floralwhite;
   border-radius: 10px;
@@ -26,4 +26,21 @@ html {
 
 .round-info p {
   margin: 5px 0;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-modal {
+  align-self: flex-end;
+  padding: 0 5px;
+  background-color: #ff474d
+}
+
+.end-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
 }

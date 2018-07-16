@@ -17,7 +17,7 @@ class GuessForm extends React.Component {
   handleGuess() {
     if (this.props.home === this.state.home && this.props.away === this.state.away) {
       this.props.correctGuess()
-      this.setState({home: '', away: '', incorrectGuessCount: 0})
+      this.setState({home: '', away: '', homeGuess: 'incorrect', awayGuess: 'incorrect'})
     } else if (this.props.home === this.state.home && this.props.away !== this.state.away) {
       this.setState({
         away: '',
@@ -83,7 +83,7 @@ class GuessForm extends React.Component {
                 Guess
               </button>
               <button
-                className="btn btn-giveUp"
+                className="btn btn-pass"
                 onClick={() => this.giveUp()}
                 >
                   Pass

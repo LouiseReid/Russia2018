@@ -48,7 +48,7 @@ class Main extends React.Component {
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({modalIsOpen: false, modalHome: null, modalAway: null});
   }
 
   showAnswer(g1, g2){
@@ -56,9 +56,10 @@ class Main extends React.Component {
   }
 
   render(){
+
     if(this.state.currentGame === undefined && this.state.modalHome === null){
       return (
-        <div>
+        <div className="end-container">
           <GameEnd finalScore={this.state.score}/>
         </div>
       );
@@ -81,7 +82,7 @@ class Main extends React.Component {
             style={customStyles}
             >
               <div className="modal-content">
-                <button onClick={() => this.closeModal()}>x</button>
+                <button className="btn btn-modal" onClick={() => this.closeModal()}>x</button>
                 <p>Correct Game: {this.state.modalHome} vs {this.state.modalAway} </p>
               </div>
             </Modal>
@@ -98,7 +99,12 @@ class Main extends React.Component {
       right: 'auto',
       bottom: 'auto',
       marginRight: '-50%',
-      transform: 'translate(-50%, -50%)'
+      transform: 'translate(-50%, -50%)',
+      borderRadius: '5px',
+      backgroundColor: 'floralwhite',
+      fontFamily: 'Nanum Gothic'
+
+
     }
   };
 

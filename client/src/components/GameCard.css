@@ -71,6 +71,7 @@
 
 .game-hints button {
   float: right;
+  background-color: #ffe34ff0
 }
 
 .rendered-hints {

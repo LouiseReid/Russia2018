@@ -33,6 +33,7 @@
 
 input {
   text-align: center;
+  font-size: 15px;
 }
 
 input.correct:focus {
@@ -44,16 +45,46 @@ input.incorrect:focus {
 }
 
 span.input-span.incorrect i {
-  visibility: hidden
+  transform: scale(0);
 }
 
 .fa-check-square {
   color: seagreen;
   transform: scale(2);
   padding-top: 3px;
+  animation: transform 5s linear
 }
 
 .guess-btn-container {
   display: flex;
   justify-content: space-evenly;
+}
+
+.btn {
+  border: 2px solid black;
+  box-shadow: 0 2px grey;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+}
+
+.btn:hover {
+  box-shadow: 0 1px grey;
+  top: 2px
+}
+
+.btn:active {
+  box-shadow: none;
+  top: 6px;
+}
+
+.btn-guess {
+  background-color: #4adb5b
+}
+
+.btn-pass {
+  background-color: #ff474d
 }

@@ -1,8 +1,11 @@
 import React from 'react';
+import './GameEnd.css'
 
 const GameEnd = (props) => {
   return (
-    <div>Final Score: {props.finalScore}</div>
+    <div className="final-result">
+      <p>Final Score: {props.finalScore}/100</p>
+    </div>
   )
 }
 
