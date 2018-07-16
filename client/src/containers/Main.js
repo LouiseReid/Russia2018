@@ -56,7 +56,7 @@ class Main extends React.Component {
   }
 
   render(){
-    if(this.state.currentGame === undefined){
+    if(this.state.currentGame === undefined && this.state.modalHome === null){
       return (
         <div>
           <GameEnd finalScore={this.state.score}/>
