@@ -42,17 +42,39 @@
 }
 
 .game-interaction {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.9);
   height: 70vh;
-  width: 45vw;
+  width: 35vw;
   padding: 0 5px 0;
   font-size: 18px;
+  border-radius: 4px;
+  border: 3px solid floralwhite;
+}
+
+.round-score {
+  text-align: right;
+  margin-right: 10px
+}
+
+.hint-label {
+  font-size: 15px;
+}
+
+.hint-label li {
+  font-size: 17px
 }
 
 .game-hints {
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 50%;
+  height: 45%;
   font-weight: bold;
+}
+
+.game-hints button {
+  float: right;
+}
+
+.rendered-hints {
+  padding-top: 10px;
 }
 
 li {

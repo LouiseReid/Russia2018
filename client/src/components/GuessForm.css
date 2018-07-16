@@ -3,6 +3,22 @@
   flex-direction: column;
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container p {
+  margin: 0
+}
+
+.input-span {
+  text-align: center;
+  width: 80%
+}
+
+
 .guess-inputs input {
   width: 50%;
   height: 30px;
@@ -10,10 +26,34 @@
 }
 
 .guess-inputs .btn {
-  width: 50%;
+  width: 30%;
   height: 30px;
   margin: 10px
 }
 
-.correct {
+input {
+  text-align: center;
+}
+
+input.correct:focus {
+  outline-color: green
+}
+
+input.incorrect:focus {
+  outline-color: red
+}
+
+span.input-span.incorrect i {
+  visibility: hidden
+}
+
+.fa-check-square {
+  color: seagreen;
+  transform: scale(2);
+  padding-top: 3px;
+}
+
+.guess-btn-container {
+  display: flex;
+  justify-content: space-evenly;
 }

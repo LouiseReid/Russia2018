@@ -85,10 +85,13 @@ class GameCard extends React.Component {
             </div>
           </div>
           <div className="game-interaction">
-            <p>Round Score: {this.state.roundScore}</p>
+            <p className="round-score">Round Score: {this.state.roundScore}</p>
             <div className="game-hints">
               <button onClick={() => this.renderHint()}>Show Hint</button>
-              <p>hints: {renderedHints}</p>
+              <p className="hint-label">Hints: </p>
+              <div className="rendered-hints">
+                {renderedHints}
+              </div>
             </div>
             <GuessForm
               home={home_team}

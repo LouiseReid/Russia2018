@@ -1,5 +1,6 @@
 import React from 'react';
 import './GuessForm.css';
+import _ from 'lodash';
 
 
 class GuessForm extends React.Component {
@@ -51,32 +52,43 @@ class GuessForm extends React.Component {
     return (
       <React.Fragment>
         <div className="guess-inputs">
-          <input
-            className={this.state.homeGuess}
-            type="text"
-            placeholder="home team"
-            value={this.state.home}
-            onChange={event => this.setState({home: event.target.value})}
-          />
-          <input
-            className={this.state.awayGuess}
-            type="text"
-            placeholder="away team"
-            value={this.state.away}
-            onChange={event => this.setState({away: event.target.value})}
-          />
-          <button
-            className="btn btn-guess"
-            onClick={() => this.handleGuess()}
-            >
-              Guess
-            </button>
+          <div className="input-container">
+            <span className={`input-span ${this.state.homeGuess}`}>
+              <input
+                className={this.state.homeGuess}
+                type="text"
+                placeholder="home team"
+                value={this.state.home}
+                onChange={event => this.setState({home: _.upperFirst(event.target.value)})}
+              />
+              <i className="far fa-check-square"></i>
+            </span>
+            <p>vs.</p>
+            <span className={`input-span ${this.state.awayGuess}`}>
+              <input
+                className={this.state.awayGuess}
+                type="text"
+                placeholder="away team"
+                value={this.state.away}
+                onChange={event => this.setState({away: _.upperFirst(event.target.value)})}
+              />
+              <i className="far fa-check-square"></i>
+            </span>
+          </div>
+          <div className="guess-btn-container">
             <button
-              className="btn btn-giveUp"
-              onClick={() => this.giveUp()}
+              className="btn btn-guess"
+              onClick={() => this.handleGuess()}
               >
-                Give Up
+                Guess
               </button>
+              <button
+                className="btn btn-giveUp"
+                onClick={() => this.giveUp()}
+                >
+                  Pass
+                </button>
+          </div>
             </div>
           </React.Fragment>
         )
