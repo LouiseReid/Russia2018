@@ -83,7 +83,7 @@ li {
 }
 
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 414px) {
   .game-container {
     flex-direction: column;
   }
@@ -170,5 +170,39 @@ li {
 
   .final-result {
     width: 45vw
+  }
+}
+
+@media all and (max-width: 360px) {
+  .game-info {
+    font-size: 11px
+  }
+
+  .game-card-header {
+    margin-top: 13px;
+    font-size: 12px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .game-info {
+    font-size: 10px;
+  }
+
+  .game-card-header {
+    margin-top: 2px;
+    font-size: 10px;
+  }
+
+  .rendered-hints {
+    padding-top: 0px;
+    font-size: 10px;
+  }
+
+  .guess-inputs .btn {
+    width: 25%;
+    height: 20px;
+    margin: 10px;
+    font-size: 10px;
   }
 }

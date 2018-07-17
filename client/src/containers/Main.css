@@ -46,12 +46,24 @@ html {
 }
 
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 414px) {
   .round-info {
     height: 5vh;
     width: 10vh;
     font-size: 11px;
     padding: 7px;
     margin-top: 5px;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .round-info {
+    font-size: 10px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .round-info {
+    font-size: 8px;
   }
 }

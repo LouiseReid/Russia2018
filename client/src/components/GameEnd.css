@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 414px) {
   .final-result {
     width: 50vw
   }
