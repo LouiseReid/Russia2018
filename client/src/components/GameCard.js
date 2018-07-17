@@ -69,8 +69,8 @@ class GameCard extends React.Component {
                 <p>Tactics: {home_tactics}</p>
               </div>
               <div className="game-extras">
-                <p>Extra Time: {extra_time ? extra_time : 'false'}</p>
-                <p>Penalties: {penalties ? penalties : 'false'}</p>
+                <p>Extra Time: {extra_time ? 'true' : 'false'}</p>
+                <p>Penalties: {penalties ? 'true': 'false'}</p>
               </div>
               <div className="away-stats">
                 <p>Away Team</p>
