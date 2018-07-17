@@ -44,10 +44,6 @@ class Main extends React.Component {
     this.setState({modalIsOpen: true})
   }
 
-  afterOpenModal() {
-    this.subtitle.style.color = '#f00';
-  }
-
   closeModal() {
     this.setState({modalIsOpen: false, modalHome: null, modalAway: null});
   }
@@ -80,7 +76,7 @@ class Main extends React.Component {
             isOpen={this.state.modalIsOpen}
             onAfterOpen={() => this.afterOpenModal}
             onRequestClose={() => this.closeModal}
-            style={customStyles}
+            style={modalStyle}
             >
               <div className="modal-content">
                 <button className="btn btn-modal" onClick={() => this.closeModal()}>x</button>
@@ -94,7 +90,7 @@ class Main extends React.Component {
     }
   }
 
-  const customStyles = {
+  const modalStyle = {
     content: {
       top: '50%',
       left: '50%',
@@ -105,8 +101,6 @@ class Main extends React.Component {
       borderRadius: '5px',
       backgroundColor: 'floralwhite',
       fontFamily: 'Nanum Gothic'
-
-
     }
   };
 
