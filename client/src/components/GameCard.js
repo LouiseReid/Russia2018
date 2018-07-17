@@ -7,8 +7,7 @@ class GameCard extends React.Component {
     super(props);
     this.state = {
       roundScore: 10,
-      hintsShown: [],
-      modalIsOpen: false
+      hintsShown: []
     };
   }
 
@@ -20,7 +19,6 @@ class GameCard extends React.Component {
   }
 
   correctGuess(){
-    this.setState({modalIsOpen: true})
     let roundScore = this.state.roundScore
     this.props.addToScore(roundScore)
     const initialState = {
@@ -31,25 +29,14 @@ class GameCard extends React.Component {
   }
 
   giveUp(g1, g2){
-    this.props.showAnswer(g1, g2)
     this.setState({roundScore: 0}, () => this.correctGuess())
+    this.props.showAnswer(g1, g2, this.state.roundScore)
   }
 
   handleGuess(){
     this.setState({roundScore: this.state.roundScore - 1})
   }
 
-  openModal() {
-    this.setState({modalIsOpen: true})
-  }
-
-  afterOpenModal() {
-    this.subtitle.style.color = '#f00';
-  }
-
-  closeModal() {
-    this.setState({modalIsOpen: false, modalHome: null, modalAway: null});
-  }
 
   render(){
     if(!this.props.game) return null;

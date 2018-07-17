@@ -81,3 +81,94 @@
 li {
   margin: 10px;
 }
+
+
+@media all and (max-width: 375px) {
+  .game-container {
+    flex-direction: column;
+  }
+
+  .game-interaction {
+    height: 50vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .round-score {
+    margin: 2px;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .game-info {
+    width: 93vw;
+    height: 35vh;
+    font-size: 12px;
+    margin-bottom: 10px
+  }
+
+  .game-info h3 {
+    margin: 4px
+  }
+
+  .game-info p {
+    margin: 6px
+  }
+
+  .game-card-header {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .game-hints button {
+    font-size: 12px;
+    margin-top: 1px
+  }
+
+  .hint-label {
+    font-size: 13px;
+  }
+
+  .rendered-hints {
+    padding-top: 0px;
+    font-size: 13px;
+  }
+
+  .input-container {
+    margin-top: 30px
+  }
+
+  .input-container span {
+    height: 5vh
+  }
+
+  .input-container p {
+    font-size: 10px
+  }
+
+  .guess-inputs input {
+    height: 20px;
+    margin: 5px;
+    font-size: 10px
+  }
+
+  .guess-inputs .btn {
+    width: 25%;
+    height: 25px;
+    margin: 10px;
+    font-size: 13px;
+  }
+
+  .fa-check-square {
+    transform: scale(1);
+  }
+
+  .modal-content {
+    font-size: 12px
+  }
+
+  .final-result {
+    width: 45vw
+  }
+}

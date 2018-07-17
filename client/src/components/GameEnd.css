@@ -3,8 +3,19 @@
   align-items: center;
   margin: 0 auto;
   height: 15vh;
-  width: 10vw;
+  width: 25vw;
   background-color: #ffe34ff0;
   border: 3px solid floralwhite;
   border-radius: 10px;
+}
+
+.final-result p {
+  width: 100%;
+  text-align: center;
+}
+
+@media all and (max-width: 375px) {
+  .final-result {
+    width: 50vw
+  }
 }

@@ -14,6 +14,7 @@ class Main extends React.Component {
       games: [],
       currentGame: null,
       round: 1,
+      roundScore: 0,
       score: 0,
       modalIsOpen: false,
       modalHome: null,
@@ -51,7 +52,7 @@ class Main extends React.Component {
     this.setState({modalIsOpen: false, modalHome: null, modalAway: null});
   }
 
-  showAnswer(g1, g2){
+  showAnswer(g1, g2, roundScore){
     this.setState({modalHome: g1, modalAway: g2, modalIsOpen: true})
   }
 
@@ -84,6 +85,7 @@ class Main extends React.Component {
               <div className="modal-content">
                 <button className="btn btn-modal" onClick={() => this.closeModal()}>x</button>
                 <p>Correct Game: {this.state.modalHome} vs {this.state.modalAway} </p>
+                <p>Round Score: {this.state.roundScore}</p>
               </div>
             </Modal>
           </div>
