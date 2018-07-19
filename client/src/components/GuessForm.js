@@ -59,7 +59,7 @@ class GuessForm extends React.Component {
                 type="text"
                 placeholder="home team"
                 value={this.state.home}
-                onChange={event => this.setState({home: _.upperFirst(event.target.value)})}
+                onChange={event => this.setState({home: _.upperFirst(event.target.value.trim())})}
               />
               <i className="far fa-check-square"></i>
             </span>
@@ -70,7 +70,7 @@ class GuessForm extends React.Component {
                 type="text"
                 placeholder="away team"
                 value={this.state.away}
-                onChange={event => this.setState({away: _.upperFirst(event.target.value)})}
+                onChange={event => this.setState({away: _.upperFirst(event.target.value.trim())})}
               />
               <i className="far fa-check-square"></i>
             </span>
